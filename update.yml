@@ -1,0 +1,10 @@
+- name: Upgrade apt
+  user: user
+  hosts: HostGroup
+  become: yes
+  tasks:
+    - name: Upgrade Apt
+    apt:
+      force_apt_get: yes
+      upgrade: dist
+    become: yes

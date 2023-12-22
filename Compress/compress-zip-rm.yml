@@ -1,0 +1,11 @@
+- name: Comprimir y borrar
+   user: user
+   hosts: HostGroup
+   tasks:
+    - name: Compress Directory contents
+      become: yes
+      archive:
+        path: /apps/tomcat/logs/catalina.2019-07-24.log
+        dest: /apps/tomcat/catalina.2019-07-24.log.zip
+        format: zip
+        remove: yes

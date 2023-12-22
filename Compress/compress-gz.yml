@@ -1,0 +1,10 @@
+- name: comprimir directorio
+   user: user
+   hosts: HostGroup
+   tasks:
+    - name: Compress Directory contents
+      become: yes
+      archive:
+        path: /apps/tomcat
+        dest: /apps/tomcat.tar.gz
+        format: gz

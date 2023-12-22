@@ -1,0 +1,11 @@
+ - name: Shell para comprobar la fecha
+    hosts: HostGroup
+    tasks:
+
+    - name: Check fecha con el shell
+      shell:
+         "date"
+      register: datecmd
+      tags: datecmd
+
+    - debug: msg="{{datecmd.stdout}}"
